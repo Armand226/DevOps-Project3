@@ -3,7 +3,7 @@ data "http" "workstation-external-ip" {
 }
 
 locals {
-  workstation-external-cidr = "${chomp(data.http.workstation-external-ip.body)}/32"
+  workstation-external-cidr = "${chomp(data.http.workstation-external-ip.body)}/16"
 }
 
 data "aws_subnet_ids" "subnet_id" {
